@@ -9,10 +9,14 @@ import "../styles/global.css";
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+
+		<script is:inline src="/scripts/theme.js"></script>
+
 		<title>Astro</title>
 	</head>
+
 	<body>
 		<h1>Astro</h1>
-        <slot/>
+		<slot />
 	</body>
 </html>

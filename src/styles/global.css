@@ -1,1 +1,22 @@
 @import "tailwindcss";
+
+:root {
+    color-scheme: light dark;
+
+    --background-image: url("/background/light.svg");
+}
+
+html[data-theme="light"] {
+    color-scheme: light;
+    --background-image: url("/background/light.svg");
+}
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+    --background-image: url("/background/dark.svg");
+}
+
+body {
+    background-image: var(--background-image);
+    background-repeat: repeat;
+}
