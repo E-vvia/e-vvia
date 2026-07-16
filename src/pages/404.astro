@@ -1,0 +1,55 @@
+---
+import "../styles/global.css";
+import { Image } from "astro:assets";
+import AdditionalMemory from "../assets/images/additional_memory.gif";
+import CardAstroComponent from "../components/card.astro";
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width" />
+        <script is:inline src="/scripts/theme.js"></script>
+        <title>E-vvia</title>
+    </head>
+
+    <body class="h-lvh flex justify-center items-center">
+        <div
+            class="max-w-xl rounded-2xl bg-white/80 dark:bg-black/60 backdrop-blur-md shadow-xl p-8 text-center"
+        >
+            <h1
+                class="text-4xl md:text-6xl font-extrabold tracking-tight text-black dark:text-white"
+            >
+                404 - NOT FOUND
+            </h1>
+
+            <Image
+                src={AdditionalMemory}
+                alt="Ayano in additional memory gif"
+                class="mt-8 mx-auto w-64 md:w-80 rounded-lg shadow-lg"
+            />
+
+            <div class="mt-8">
+                <CardAstroComponent>
+                    <div class="space-y-3">
+                        <p>The page you were looking for was not found...</p>
+
+                        <p>
+                            Maybe you were looking for an
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="ml-1 font-medium text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300 transition-colors"
+                            >
+                                Additional Memory
+                            </a>?
+                        </p>
+                    </div>
+                </CardAstroComponent>
+            </div>
+        </div>
+    </body>
+</html>
