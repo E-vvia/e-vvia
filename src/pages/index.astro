@@ -1,10 +1,13 @@
 ---
 import BaseLayout from "../layouts/base-layout.astro";
-import Card from "../components/card.astro";
+import ContainerAstroComponent from "../components/container.astro";
+import CardAstroComponent from "../components/card.astro";
 ---
 
 <BaseLayout>
-    <div class="flex h-full px-12.5 lg:px-25">
-       <Card/>
+    <div class="flex justify-center">
+        <ContainerAstroComponent>
+            <CardAstroComponent/>
+        </ContainerAstroComponent>
     </div>
 </BaseLayout>
