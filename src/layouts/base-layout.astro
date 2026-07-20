@@ -1,5 +1,13 @@
 ---
+interface Props {
+	title: string;
+}
+
+import { Font } from "astro:assets";
 import "../styles/global.css";
+import HeaderAstroComponent from "../components/header.astro";
+const { title } = Astro.props;
+const pageTitle = "E-vvia - " + title;
 ---
 
 <html lang="en">
@@ -9,14 +17,16 @@ import "../styles/global.css";
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-
+		<Font cssVariable="--font-fot-yuruka-std" preload />
 		<script is:inline src="/scripts/theme.js"></script>
 
-		<title>E-vvia</title>
+		<title>{pageTitle}</title>
 	</head>
 
-	<body class="h-lvh">
-		
-		<slot />
+	<body class="min-h-lvh flex flex-col">
+		<HeaderAstroComponent />
+		<main class="flex-1 flex items-center justify-center">
+			<slot />
+		</main>
 	</body>
 </html>

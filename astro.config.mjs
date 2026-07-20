@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 
@@ -7,5 +7,19 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
-  }
+  },
+  fonts: [
+    {
+      provider: fontProviders.local(),
+      name: 'Fot Yuruka Std',
+      cssVariable: '--font-fot-yuruka-std',
+      options: {
+        variants: [{
+          src: ['./src/assets/fonts/fot-yuruka-std.ttf'],
+          weight: 'normal',
+          style: 'normal'
+        }]
+      }
+    }
+  ]
 });

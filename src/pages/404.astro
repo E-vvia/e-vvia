@@ -7,39 +7,37 @@ import ContainerAstroComponent from "../components/container.astro";
 import LinkAstroComponent from "../components/link.astro";
 ---
 
-<BaseLayout>
-    <div class="h-lvh flex justify-center items-center">
-        <ContainerAstroComponent>
-            <h1
-                class="text-4xl md:text-6xl font-extrabold tracking-tight text-black dark:text-white"
-            >
-                404 - NOT FOUND
-            </h1>
+<BaseLayout title="404 - NOT FOUND">
+    <ContainerAstroComponent>
+        <h1
+            class="text-4xl md:text-6xl font-extrabold tracking-tight text-black dark:text-white"
+        >
+            404 - NOT FOUND
+        </h1>
 
-            <Image
-                src={AdditionalMemory}
-                alt="Ayano in additional memory gif"
-                class="mt-5 mx-auto w-64 md:w-80 rounded-lg"
-            />
+        <Image
+            src={AdditionalMemory}
+            alt="Ayano in additional memory gif"
+            class="mt-5 mx-auto w-64 md:w-80 rounded-lg"
+        />
 
-            <div class="mt-5">
-                <CardAstroComponent>
-                    <div class="space-y-2.5 m-5 text-center">
-                        <p>The page you were looking for was not found...</p>
+        <div class="mt-5">
+            <CardAstroComponent>
+                <div class="space-y-2.5 m-5 text-center">
+                    <p>The page you were looking for was not found...</p>
 
-                        <p>
-                            Maybe you were looking for an
-                            <LinkAstroComponent
-                                href="https://www.youtube.com/watch?v=q2QfH1JqtkY&list=RDq2QfH1JqtkY"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Additional Memory
-                            </LinkAstroComponent>?
-                        </p>
-                    </div>
-                </CardAstroComponent>
-            </div>
-        </ContainerAstroComponent>
-    </div>
+                    <p>
+                        Maybe you were looking for an
+                        <LinkAstroComponent
+                            href="https://www.youtube.com/watch?v=q2QfH1JqtkY&list=RDq2QfH1JqtkY"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Additional Memory
+                        </LinkAstroComponent>?
+                    </p>
+                </div>
+            </CardAstroComponent>
+        </div>
+    </ContainerAstroComponent>
 </BaseLayout>

@@ -1,0 +1,13 @@
+---
+import menuLinks from "../../data/menu-links.json";
+---
+
+{
+    menuLinks.map((link) => {
+        return (
+            <li>
+                <a href={link.url}>{link.title}</a>
+            </li>
+        );
+    })
+}

@@ -47,3 +47,7 @@ body {
         @apply p-10;
     }
 }
+
+.font-special {
+    font-family: var(--font-fot-yuruka-std);
+}
