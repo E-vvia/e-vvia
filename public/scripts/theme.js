@@ -1,10 +1,13 @@
-const themes = ["light", "dark"];
+const themes = ["light", "dark", "system"];
 
 function themeManager() {
     const media = window.matchMedia("(prefers-color-scheme: dark)");
     const localStorageKey = "theme";
 
     function setTheme(theme) {
+        if (theme == 'system') {
+            theme = media.matches ? "dark" : "light";
+        }
         document.documentElement.dataset.theme = theme;
     }
 
@@ -19,7 +22,7 @@ function themeManager() {
             return saved;
         }
 
-        return media.matches ? "dark" : "light";
+        return 'system';
     }
 
     function setSavedThemeOrSystem() {
