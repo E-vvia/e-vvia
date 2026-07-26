@@ -1,12 +1,13 @@
 ---
 interface Props {
 	title: string;
+	mainClass?: string;
 }
 
 import { Font } from "astro:assets";
 import "../styles/global.css";
 import HeaderAstroComponent from "../components/header.astro";
-const { title } = Astro.props;
+const { title, mainClass } = Astro.props;
 const pageTitle = "E-vvia - " + title;
 ---
 
@@ -26,7 +27,7 @@ const pageTitle = "E-vvia - " + title;
 
 	<body class="min-h-lvh flex flex-col">
 		<HeaderAstroComponent />
-		<main class="flex-1 flex items-center justify-center">
+		<main class={mainClass}>
 			<slot />
 		</main>
 	</body>

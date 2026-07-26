@@ -24,6 +24,12 @@ body {
     background-repeat: repeat;
 }
 
+@layer font-size {
+    h1 {
+        @apply text-4xl font-extrabold tracking-tight text-black dark:text-white;
+    }
+}
+
 @layer colors {
     .surface {
         @apply bg-white/80 dark:bg-black/60 backdrop-blur-md shadow-xl;

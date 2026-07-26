@@ -7,10 +7,13 @@ import ContainerAstroComponent from "../components/container.astro";
 import LinkAstroComponent from "../components/link.astro";
 ---
 
-<BaseLayout title="404 - NOT FOUND">
+<BaseLayout
+    title="404 - NOT FOUND"
+    mainClass="flex-1 flex items-center justify-center"
+>
     <ContainerAstroComponent>
         <h1
-            class="text-4xl md:text-6xl font-extrabold tracking-tight text-black dark:text-white"
+            class="text-center"
         >
             404 - NOT FOUND
         </h1>
@@ -19,6 +22,7 @@ import LinkAstroComponent from "../components/link.astro";
             src={AdditionalMemory}
             alt="Ayano in additional memory gif"
             class="mt-5 mx-auto w-64 md:w-80 rounded-lg"
+            priority
         />
 
         <div class="mt-5">
@@ -27,13 +31,12 @@ import LinkAstroComponent from "../components/link.astro";
                     <p>The page you were looking for was not found...</p>
 
                     <p>
-                        Maybe you were looking for an
+                        Maybe you were looking for an 
                         <LinkAstroComponent
                             href="https://www.youtube.com/watch?v=q2QfH1JqtkY&list=RDq2QfH1JqtkY"
                             target="_blank"
                             rel="noopener noreferrer"
-                        >
-                            Additional Memory
+                        > Additional Memory
                         </LinkAstroComponent>?
                     </p>
                 </div>

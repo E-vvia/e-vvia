@@ -1,5 +1,12 @@
-<div
-    class="rounded-xl double-p surface "
->
+---
+interface Props {
+    rootClass?: string;
+}
+
+const {rootClass} = Astro.props;
+const baseClass = "rounded-xl double-p surface " + rootClass;
+---
+
+<div class={baseClass}>
     <slot />
 </div>
