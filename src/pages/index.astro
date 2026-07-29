@@ -1,34 +1,35 @@
 ---
 import { Image } from "astro:assets";
-import Container from "../components/container.astro";
 import BaseLayout from "../layouts/base-layout.astro";
 import YobanashiDeceive from "../assets/images/yobanashi_deceive.gif";
+import Post from "../components/post.astro";
 ---
 
 <BaseLayout title="Home">
-    <Container rootClass="mt-15 mx-15">
-        <h1>Welcome to my site!</h1>
-        <hr class="my-8 border-gray-200 dark:border-gray-700" />
-        <p>
-            Hello there visitor! <br />
-            Welcome to my corner of the internet where I post my ramblings, some blog
-            post and essentially write about stuff I like. From coding to videogames
-            and some anime. <br />
-            This site is very much W.I.P and probably will be for a long time! I still
-            hope you enjoy your browsing!
-        </p>
-        <figure class="my-5 flex flex-col items-center">
-            <Image
-                class="rounded-lg"
-                alt="Shuuya Kano painting a wall in Yobanashi Deceive"
-                src={YobanashiDeceive}
-                priority
-            />
-            <figcaption
-                class="mt-3 text-center text-sm text-gray-500 dark:text-gray-400"
-            >
-                You will find many gifs on this site. Mainly Kagepro haha...
-            </figcaption>
-        </figure>
-    </Container>
+    <Post containerClass="mb-auto m-15">
+        <h1 slot="header">Welcome to my site!</h1>
+        <div slot="content">
+            <p>
+                Hello there visitor! <br />
+                Welcome to my corner of the internet where I post my ramblings, some
+                blog post and essentially write about stuff I like. From coding to
+                videogames and some anime. <br />
+                This site is very much W.I.P and probably will be for a long time!
+                I still hope you enjoy your browsing!
+            </p>
+            <figure class="my-5 flex flex-col items-center">
+                <Image
+                    class="rounded-lg"
+                    alt="Shuuya Kano painting a wall in Yobanashi Deceive"
+                    src={YobanashiDeceive}
+                    priority
+                />
+                <figcaption
+                    class="mt-3 text-center text-sm text-gray-500 dark:text-gray-400"
+                >
+                    You will find many gifs on this site. Mainly Kagepro haha...
+                </figcaption>
+            </figure>
+        </div>
+    </Post>
 </BaseLayout>

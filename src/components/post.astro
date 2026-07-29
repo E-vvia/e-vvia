@@ -1,0 +1,15 @@
+---
+interface Props {
+    containerClass: string;
+}
+
+import Container from "./container.astro";
+
+const { containerClass } = Astro.props;
+---
+
+<Container rootClass={containerClass}>
+    <slot name="header" />
+    <hr class="my-8 border-gray-200 dark:border-gray-700" />
+    <slot name="content" />
+</Container>

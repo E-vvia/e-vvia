@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../layouts/base-layout.astro";
+import Post from "../components/post.astro";
+import Link from "../components/link.astro";
+import { Image } from "astro:assets";
+const imageUrl =
+    "https://raw.githubusercontent.com/theinsidersandrush/ServiceLogos/refs/heads/main/C%2CC%23%2CC%2B%2B/All.png";
+---
+
+<BaseLayout title="Home">
+    <Post containerClass="m-15">
+        <h1 slot="header">About me</h1>
+        <div slot="content">
+            <p>
+                My name is E-vvia, or well my online name that is!<br />
+                I'm a 27 years old programmer that live in... <i
+                    >(actually I think I shouldn't disclose where I live)</i
+                >.<br />
+                Since I was a kid I enjoyed computers and the online sea, but It has
+                not been until recently when I decided to open this site. I have been
+                a programmer for various years now and currently I work as a .NET
+                developer.<br />
+                <br />
+                C# is not always my cup of tea but I guess I ended up with a bit of
+                a Stockholm syndrome since I have come to actually enjoy it. Sometimes
+                still like to mess around with some good old C or C++ and doing some
+                fun small projects <i>(that usually lead to nowhere)</i>.
+                Obviously I also use html and js in different occasions either
+                when my work requires it or to build this website <i
+                    >(it's actually built on Astro though!)
+                </i><br /><br />
+                As for other hobbies I enjoy playing videogames sometimes <i
+                    >(when I have the time that is! adulting is hard!!)</i
+                >, play the piano <i>(it's collecting dust!)</i> or playing some board
+                games with friends <i
+                    >(Magic the Gathering and Yugioh can be fun! HEY YOU! check <Link
+                        href="yugisearch.e-vvia.moe"
+                        target="_blank">YugiSearch</Link
+                    >)</i
+                > and watch the ocacional Anime or Manga that really hits me like
+                a truck. <i>(Totally not Kagepro!)</i><br /><br />
+                Aside from that I ocacionally hop on VRChat and hang out with some
+                friends, using avatars in VR can be quite fun... I might post some
+                pictures in this site!
+            </p>
+            <figure class="my-5 flex flex-col items-center">
+                <Image
+                    width="250"
+                    height="250"
+                    class="rounded-lg"
+                    alt="Shuuya Kano painting a wall in Yobanashi Deceive"
+                    src={imageUrl}
+                    priority
+                />
+            </figure>
+        </div>
+    </Post>
+</BaseLayout>
