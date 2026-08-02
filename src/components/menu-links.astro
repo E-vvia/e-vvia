@@ -1,0 +1,17 @@
+---
+
+import MenuItem from './menu-item.astro';
+import type MenuLink from '../types/menu-link';
+
+interface Props {
+    containerClass?: string;
+    menuLinks: MenuLink[];
+}
+
+const { menuLinks, containerClass } = Astro.props;
+---
+
+<ul class={containerClass}>
+    {menuLinks.map((link) => <MenuItem link={link} />)}
+    <slot></slot>
+</ul>

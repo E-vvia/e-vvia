@@ -1,5 +1,6 @@
 ---
-import MenuLinksAstroComponent from "./header/menu-links.astro";
+import MenuLinkData from '../data/menu-links.json';
+import MenuLinks from "./menu-links.astro";
 import ThemeSwitcherButton from "./theme-switcher-button.astro";
 ---
 
@@ -11,15 +12,14 @@ import ThemeSwitcherButton from "./theme-switcher-button.astro";
             </h1>
 
             <nav class="hidden md:block">
-                <ul class="flex gap-5 items-center">
-                    <MenuLinksAstroComponent />
+                <MenuLinks menuLinks={MenuLinkData} containerClass="flex gap-5 items-center">
                     <li>
                         <ThemeSwitcherButton id="desktop" />
                     </li>
-                </ul>
+                </MenuLinks>
             </nav>
             <div class="md:hidden flex gap-x-2.5">
-                <ThemeSwitcherButton id="mobile"/>
+                <ThemeSwitcherButton id="mobile" />
                 <button
                     id="menu-button"
                     class="md:hidden text-2xl"
@@ -51,9 +51,7 @@ import ThemeSwitcherButton from "./theme-switcher-button.astro";
            transition-all duration-200 ease-out
            pointer-events-none"
     >
-        <ul class="flex flex-col gap-4 p-5">
-            <MenuLinksAstroComponent />
-        </ul>
+        <MenuLinks menuLinks={MenuLinkData} containerClass="flex flex-col gap-4 p-5" />
     </nav>
 </div>
 
@@ -75,10 +73,10 @@ import ThemeSwitcherButton from "./theme-switcher-button.astro";
     });
 
     const media = window.matchMedia("(min-width: 768px)");
-    media.addEventListener('change', ()=>{
+    media.addEventListener("change", () => {
         //@ts-ignore
         window.themeSwicher.reloadSwitchers();
-    })
+    });
 </script>
 
 <style>

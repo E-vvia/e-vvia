@@ -1,0 +1,36 @@
+---
+import Card from "../../components/card.astro";
+import Post from "../../components/post.astro";
+import BaseLayout from "../../layouts/base-layout.astro";
+import KageProLogo from "../../assets/images/archive/logos/kagepro.webp";
+import Image from "astro/components/Image.astro";
+---
+
+<BaseLayout title="Archive">
+    <Post>
+        <h1 slot="header">Welcome to the Archive</h1>
+        <p slot="content">
+            The archive is where I place recopilations of different stuff I find
+            interesting or that I deem worth preserve to prevent it from
+            becoming lost media in the future while also providing links to
+            enjoy said media or to legally acquire a copy of it (absolutely no
+            piracy!).<br />
+            For archiving purpose I will try to hold a copy of everything I share
+            here so in case It gets taken down, It won't ever get completely lost
+            and may be restored or archived in sites suited and licensed for that
+            purpose.
+            <div class="flex m-7.5 md:m-15">
+                <a href="/archive/kagepro">
+                    <Card containerClass="p-5">
+                        <Image
+                            class="rounded-lg"
+                            src={KageProLogo}
+                            priority
+                            alt="Kagerou Project logo"
+                        />
+                    </Card>
+                </a>
+            </div>
+        </p>
+    </Post>
+</BaseLayout>

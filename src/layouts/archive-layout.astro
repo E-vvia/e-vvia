@@ -1,0 +1,33 @@
+---
+interface Props {
+    title: string;
+    mainClass?: string;
+    sideMenuLinks: MenuLink[];
+}
+
+const { title, sideMenuLinks } = Astro.props;
+import BaseLayout from "./base-layout.astro";
+import Container from "../components/container.astro";
+import Post from "../components/post.astro";
+import MenuLinks from "../components/menu-links.astro";
+import type MenuLink from "../types/menu-link";
+---
+
+<BaseLayout title={title}>
+    <div
+        class="mb-7.5 mt-7.5 md:mt-15 md:mx-15 flex flex-col gap-2.5 md:grid md:grid-cols-[15%_85%]"
+    >
+        <aside>
+            <Container>
+                <MenuLinks menuLinks={sideMenuLinks}/>
+            </Container>
+        </aside>
+
+        <main>
+            <Post noMmargin={true} >
+                <slot name="header" slot="header"/>
+                <slot name="content" slot="content"/>
+            </Post>
+        </main>
+    </div>
+</BaseLayout>

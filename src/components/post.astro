@@ -1,14 +1,16 @@
 ---
 interface Props {
-    containerClass: string;
+    containerClass?: string;
+    noMmargin?: boolean;
 }
 
 import Container from "./container.astro";
 
-const { containerClass } = Astro.props;
+const { containerClass, noMmargin } = Astro.props;
+const containerClasses = !noMmargin ? "mb-7.5 md:mb-auto mt-7.5 md:mt-15 md:mx-15 " + containerClass : containerClass;
 ---
 
-<Container rootClass={containerClass}>
+<Container rootClass={containerClasses}>
     <slot name="header" />
     <hr class="my-8 border-gray-200 dark:border-gray-700" />
     <slot name="content" />

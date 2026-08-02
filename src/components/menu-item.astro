@@ -1,0 +1,17 @@
+---
+import type MenuItem from '../types/menu-link.ts';
+const { link } = Astro.props;
+---
+
+<li>
+    <a href={link.url}>{link.title}</a>
+    {
+        link.subMenu?.length && (
+            <ul>
+                {link.subMenu.map((child: MenuItem) => (
+                    <Astro.self link={child} />
+                ))}
+            </ul>
+        )
+    }
+</li>
